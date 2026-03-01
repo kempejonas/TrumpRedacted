@@ -1,4 +1,4 @@
-# Redact Trump
+# Trump Redacted
 
 A free, open-source browser extension that places a black box over mentions of Donald Trump's name on any webpage.
 

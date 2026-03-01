@@ -1,4 +1,4 @@
-.redact-trump {
+.trump-redacted {
   background-color: #000 !important;
   color: #000 !important;
   border-radius: 2px;
@@ -10,18 +10,18 @@
 }
 
 /* Ensure it stays redacted even if the page tries to override */
-.redact-trump * {
+.trump-redacted * {
   background-color: #000 !important;
   color: #000 !important;
 }
 
 /* When toggled off, make redactions transparent */
-.redact-trump-disabled .redact-trump {
+.trump-redacted-disabled .trump-redacted {
   background-color: transparent !important;
   color: inherit !important;
 }
 
-.redact-trump-disabled .redact-trump * {
+.trump-redacted-disabled .trump-redacted * {
   background-color: transparent !important;
   color: inherit !important;
 }

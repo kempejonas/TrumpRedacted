@@ -1,5 +1,5 @@
 /**
- * Redact Trump – Content Script
+ * Trump Redacted – Content Script
  * Walks the DOM and places black boxes over specified name variants.
  *
  * Targets (case-insensitive):
@@ -28,8 +28,8 @@
     /\bDonald\b/g,
   ];
 
-  const REDACT_CLASS = "redact-trump";
-  const DISABLED_CLASS = "redact-trump-disabled";
+  const REDACT_CLASS = "trump-redacted";
+  const DISABLED_CLASS = "trump-redacted-disabled";
 
   // Skip these elements to avoid breaking page functionality
   const SKIP_TAGS = new Set([

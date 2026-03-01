@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-RedactTrump is a Chrome/Chromium browser extension (Manifest V3) that places black boxes over mentions of Donald Trump's name on any webpage. It includes a static landing page website. The project uses zero external dependencies — pure vanilla JavaScript, HTML, and CSS throughout.
+TrumpRedacted is a Chrome/Chromium browser extension (Manifest V3) that places black boxes over mentions of Donald Trump's name on any webpage. It includes a static landing page website. The project uses zero external dependencies — pure vanilla JavaScript, HTML, and CSS throughout.
 
 ## Development Setup
 
@@ -21,8 +21,8 @@ The website (`Website/index.html`) is a single static file — open directly in 
 ### Extension (`extension/`)
 
 - **manifest.json** — MV3 config; runs on `<all_urls>` at `document_idle`; only permission is `storage`
-- **content.js** — Core logic. Uses `TreeWalker` + `NodeFilter.SHOW_TEXT` to scan all text nodes, applies 4 regex patterns ordered longest-first (`Donald J. Trump` → `Donald Trump` → `Trump` → `Donald`) with `\b` word boundaries to avoid false positives. Wraps matches in `<span class="redact-trump">` elements. A `MutationObserver` handles dynamically added content (SPAs, infinite scroll). Protected elements (scripts, styles, forms, code blocks, contenteditable, SVG, math) are skipped.
-- **popup.html / popup.js** — Toggle UI. Reads/writes `enabled` state to `chrome.storage.local`. Content script listens for storage changes and can enable/disable without page reload by toggling `.redact-trump-disabled` on `<body>`.
+- **content.js** — Core logic. Uses `TreeWalker` + `NodeFilter.SHOW_TEXT` to scan all text nodes, applies 4 regex patterns ordered longest-first (`Donald J. Trump` → `Donald Trump` → `Trump` → `Donald`) with `\b` word boundaries to avoid false positives. Wraps matches in `<span class="trump-redacted">` elements. A `MutationObserver` handles dynamically added content (SPAs, infinite scroll). Protected elements (scripts, styles, forms, code blocks, contenteditable, SVG, math) are skipped.
+- **popup.html / popup.js** — Toggle UI. Reads/writes `enabled` state to `chrome.storage.local`. Content script listens for storage changes and can enable/disable without page reload by toggling `.trump-redacted-disabled` on `<body>`.
 - **redact.css** — Black-box effect via matching background and text color (`#000`), `user-select: none`, all with `!important` to override page styles. Disabled state makes redactions transparent.
 
 ### Website (`Website/`)

@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "Redact Trump",
+  "name": "Trump Redacted",
   "version": "1.0.0",
   "description": "Redacts mentions of Donald Trump's name with a black box. Open source.",
   "permissions": ["storage"],
@@ -25,5 +25,5 @@
     "48": "icons/icon48.png",
     "128": "icons/icon128.png"
   },
-  "homepage_url": "https://github.com/kempejonas/RedactTrump"
+  "homepage_url": "https://github.com/kempejonas/TrumpRedacted"
 }
